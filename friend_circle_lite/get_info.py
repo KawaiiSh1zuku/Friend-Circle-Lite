@@ -250,6 +250,7 @@ def fetch_and_process_data(json_url, specific_RSS=[], count=5):
     dict: 包含统计数据和文章信息的字典。
     """
     session = requests.Session()
+    print(headers)
     
     try:
         response = session.get(json_url, headers=headers, timeout=timeout)
