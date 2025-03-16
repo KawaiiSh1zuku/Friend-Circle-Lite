@@ -47,6 +47,7 @@ jobs:
       env:
         SMTP_PWD: ${{ secrets.SMTP_PWD }}
         FCL_REPO: ${{ github.repository }}
+        WTF_SECRET: ${{ secrets.WAF_Secret }}
       run: |
         echo "Checking RSS feeds..."
         python run.py
