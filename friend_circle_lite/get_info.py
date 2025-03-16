@@ -4,11 +4,13 @@ from dateutil import parser
 import requests
 import re
 import feedparser
+import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # 标准化的请求头
 headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50'
+    'User-Agent': 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50',
+    'Sh1zuku-WAF-Secret': os.getenv('WAF-Secret')
 }
 
 timeout = (10, 15) # 连接超时和读取超时，防止requests接受时间过长
